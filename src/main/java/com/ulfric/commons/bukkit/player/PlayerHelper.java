@@ -1,4 +1,4 @@
-package com.ulfric.commons.spigot.player;
+package com.ulfric.commons.bukkit.player;
 
 import org.bukkit.Bukkit;
 import org.bukkit.OfflinePlayer;

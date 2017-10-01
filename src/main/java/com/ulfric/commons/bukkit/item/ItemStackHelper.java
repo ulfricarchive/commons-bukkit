@@ -1,4 +1,4 @@
-package com.ulfric.commons.spigot.item;
+package com.ulfric.commons.bukkit.item;
 
 import org.bukkit.Material;
 import org.bukkit.inventory.ItemStack;

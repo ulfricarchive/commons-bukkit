@@ -1,4 +1,4 @@
-package com.ulfric.commons.spigot.command;
+package com.ulfric.commons.bukkit.command;
 
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Entity;
