@@ -1,2 +1,2 @@
-# commons-spigot
-Common Spigot utilities
+# commons-bukkit
+Common Bukkit utilities
