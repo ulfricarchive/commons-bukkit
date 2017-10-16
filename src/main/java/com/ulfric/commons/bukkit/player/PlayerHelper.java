@@ -47,6 +47,10 @@ public class PlayerHelper {
 		return argument.equals("@p") || argument.equals("@e");
 	}
 
+	public static String debugName(Player player) {
+		return String.format("%s (%s)", player.getName(), player.getUniqueId().toString());
+	}
+
 	private PlayerHelper() {
 	}
 
