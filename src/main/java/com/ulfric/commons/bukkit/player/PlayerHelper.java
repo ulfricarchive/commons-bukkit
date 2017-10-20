@@ -1,13 +1,12 @@
 package com.ulfric.commons.bukkit.player;
 
+import java.util.UUID;
+
 import org.bukkit.Bukkit;
 import org.bukkit.OfflinePlayer;
 import org.bukkit.entity.Player;
 
-import org.apache.commons.lang3.RandomUtils;
-
-import java.util.Collection;
-import java.util.Iterator;
+import com.ulfric.commons.value.UniqueIdHelper;
 
 public class PlayerHelper {
 
@@ -20,18 +19,18 @@ public class PlayerHelper {
 		return Bukkit.getOfflinePlayer(name);
 	}
 
-	public static Player getRandomPlayer() {
-		Collection<? extends Player> players = Bukkit.getOnlinePlayers();
-		if (players.isEmpty()) {
-			return null;
+	public static UUID getCachedUniqueId(String name) {
+		UUID uniqueId = UniqueIdHelper.parseUniqueId(name);
+		if (uniqueId != null) {
+			return uniqueId;
 		}
 
-		Iterator<? extends Player> iterator = players.iterator();
-		int generated = RandomUtils.nextInt(0, players.size());
-		for (int x = 0; x < generated; x++) {
-			iterator.next();
+		Player online = Bukkit.getPlayerExact(name);
+		if (online != null) {
+			return online.getUniqueId();
 		}
-		return iterator.next();
+
+		return Bukkit.getCachedUniqueId(name);
 	}
 
 	public static boolean isAskingForSelf(String argument) {
