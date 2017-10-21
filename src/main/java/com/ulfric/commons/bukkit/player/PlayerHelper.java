@@ -33,6 +33,15 @@ public class PlayerHelper {
 		return Bukkit.getCachedUniqueId(name);
 	}
 
+	public static String getCachedName(UUID uniqueId) {
+		Player online = Bukkit.getPlayer(uniqueId);
+		if (online != null) {
+			return online.getName();
+		}
+
+		return Bukkit.getCachedName(uniqueId);
+	}
+
 	public static boolean isAskingForSelf(String argument) {
 		argument = argument.toLowerCase();
 
