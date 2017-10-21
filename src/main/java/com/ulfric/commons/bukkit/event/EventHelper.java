@@ -7,8 +7,12 @@ import org.bukkit.event.Event;
 public class EventHelper {
 
 	public static <T extends Event & Cancellable> boolean call(T event) {
+		return called(event).isCancelled();
+	}
+
+	public static <T extends Event> T called(T event) {
 		Bukkit.getPluginManager().callEvent(event);
-		return event.isCancelled();
+		return event;
 	}
 
 	private EventHelper() {
