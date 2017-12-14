@@ -42,6 +42,12 @@ public class PlayerHelper {
 		return Bukkit.getCachedName(uniqueId);
 	}
 
+	public static String getName(UUID uniqueId) {
+		String cached = getCachedName(uniqueId);
+
+		return cached == null ? uniqueId.toString() : cached; // TODO better solution?
+	}
+
 	public static boolean isAskingForSelf(String argument) {
 		argument = argument.toLowerCase();
 
